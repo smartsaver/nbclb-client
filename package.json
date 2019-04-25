@@ -16,14 +16,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/jcunanan05/music-school.git"
+    "url": "git+ssh://git@github.com/jcunanan05/gatsby-mui-testing-template"
   },
   "author": "Jonathan Albert Cunanan",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jcunanan05/music-school/issues"
+    "url": "https://github.com/jcunanan05/gatsby-mui-testing-template/issues"
   },
-  "homepage": "https://github.com/jcunanan05/music-school#readme",
+  "homepage": "https://github.com/jcunanan05/gatsby-mui-testing-template#readme",
   "keywords": [],
   "dependencies": {
     "@material-ui/core": "^3.9.3",
