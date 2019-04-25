@@ -1,0 +1,18 @@
+# Node and builds
+.cache/
+node_modules
+public
+
+# gatsby
+gatsby-*.js
+
+# src
+!src
+
+# jest configs
+__mocks__
+*.test.js
+__tests__
+jest.*.js
+jest-*.js
+loadershim.js
