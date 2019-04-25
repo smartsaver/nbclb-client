@@ -1,26 +1,22 @@
-# Music School Project
+# Gatsby Mui Template (with testing)
 
-Hi! This is a music school project that I'll try to build!
+This is my gatsby material-ui template with few extras.
 
-### Requirements:
-* Working product site
-* Show what the school is, what they teach, and the instrument they offer
-* Display the logo
+- Visual testing with storybook
+- Unit testing with Jest
+- JSS and material-ui setup
 
-### Plans:
-* Learn webpack, and integrate sass, babel, uglify, and dev and prod environments?
-  * Decided to stick with learning react via NextJS
-* Full grid site? or use Bulma, sass and edit variables? or combine grid and bulma-sass?? hmmm...
-  * More of flexbox. Because bulma is a flexbox framework
-  * Used NextJS-sass plugin
-* include png school Logo (?)
-  * planning to include 3 resolutions (mobile, tablet, high res logo)
-* Research some visual ideas
-  * try wireframing with balsamiq first
-* BEM__Naming (?)
-  * for sure.
+## To run:
 
-### Work today:
-- Style / Build the sections page
-- Sections content
-- Add `p` on box content`
+### Dev
+
+- `yarn start`
+
+### Production
+
+- `yarn build`
+
+### Testing
+
+- `yarn test:watch`
+- `yarn storybook`
