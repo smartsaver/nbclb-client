@@ -1,7 +1,7 @@
 {
-  "name": "weston-new-music-school",
-  "version": "2.0.0",
-  "description": "Hi! This is a music school project that I'll try to build!",
+  "name": "gatsby-mui-testing-template",
+  "version": "1.0.0",
+  "description": "Gatsby with material-ui, jss, storybook, and jest configuration.",
   "main": "index.html",
   "scripts": {
     "build": "gatsby build",
