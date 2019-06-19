@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby mui jest storybook template`,
-    description: `Boilerplate setup for gatsby, jest, storbyook, jss, and material-ui`,
-    author: `Jonathan Cunanan <cunanan.jonathan1995@gmail.com>`,
+    title: `NBCLB.ca`,
+    description: `Find out if your child is eligible to receive the Canada Learning Bond, a grant of $500 to $2,000 from the Government of Canada that is deposited directly into the Registered Education Savings Plan (RESP) of an eligible child to help with the costs of education after high school.`,
+    author: `SmartSAVER.org <info@smartsaver.org>`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -20,7 +20,6 @@ module.exports = {
       options: {
         name: `gatsby-starter-default`,
         start_url: `/`,
-        // icon: `src/images/gatsby-icon.png`
       },
     },
   ],
