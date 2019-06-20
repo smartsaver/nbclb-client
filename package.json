@@ -1,5 +1,5 @@
 {
-  "name": "gatsby-mui-testing-template",
+  "name": "nbclb.ca-client",
   "version": "1.0.0",
   "description": "Gatsby with material-ui, jss, storybook, and jest configuration.",
   "main": "index.html",
@@ -16,14 +16,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/jcunanan05/gatsby-mui-testing-template"
+    "url": "git+ssh://git@github.com/jcunanan05/nbclb.ca-client"
   },
   "author": "Jonathan Albert Cunanan",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jcunanan05/gatsby-mui-testing-template/issues"
+    "url": "https://github.com/jcunanan05/nbclb.ca-client/issues"
   },
-  "homepage": "https://github.com/jcunanan05/gatsby-mui-testing-template#readme",
+  "homepage": "https://github.com/jcunanan05/nbclb.ca-client#readme",
   "keywords": [],
   "dependencies": {
     "@material-ui/core": "^3.9.3",
