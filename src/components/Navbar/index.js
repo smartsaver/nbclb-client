@@ -56,10 +56,10 @@ class Navbar extends Component {
 
   render() {
     const { classes } = this.props;
-    const { props } = this;
+    const { props, state } = this;
     const renderDrawer = !props.renderDrawer
       ? null
-      : props.renderDrawer({ isOpen: props.isDrawerOpen });
+      : props.renderDrawer({ isOpen: state.isDrawerOpen });
     return (
       <>
         <AppBar position="static" color="inherit">
