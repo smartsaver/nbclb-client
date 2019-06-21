@@ -1,6 +1,7 @@
 import React from 'react';
-// import Typography from '@material-ui/core/Typography';
+import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
+import { bannerContent } from './content';
 import SEO from '../SEO';
 import withRoot from '../../theme/withRoot';
 
@@ -13,21 +14,18 @@ const style = {
   },
 };
 
-const locale = {
-  en: <h1>hello</h1>,
-  fr: <h1>bonjour</h1>,
-};
-
 function IndexPage(props) {
-  const { classes } = props;
-  const renderLocale = () =>
-    locale[props.location.hash.substring(1)] || locale.en;
+  const { classes, location } = props;
+  const locale = location.hash.substring(1) || 'en';
   return (
     <>
       <SEO title="Home" />
       <main className={classes.root}>
-        <a href="./#en">en</a> / <a href="./#fr">fr</a>
-        {renderLocale()}
+        <Typography variant="body1">
+          <a href="./#en">en</a> / <a href="./#fr">fr</a>
+        </Typography>
+        <Typography variant="h1">{bannerContent[locale].title}</Typography>
+        <Typography variant="body1">{bannerContent[locale].text}</Typography>
       </main>
     </>
   );
