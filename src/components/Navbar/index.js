@@ -39,7 +39,7 @@ const styles = theme => ({
 /**
  *
  * @param {*} menuEnd - navbar right side.
- * @param {*} renderDrawer({ isOpen }) - render prop drawer component
+ * @param {*} renderDrawer({ isOpen, closeDrawer }) - render prop drawer component
  * @param {object} classes - styles injected
  */
 
@@ -54,12 +54,19 @@ class Navbar extends Component {
     }));
   };
 
+  closeDrawer = () => {
+    this.setState({ isDrawerOpen: false });
+  };
+
   render() {
     const { classes } = this.props;
     const { props, state } = this;
     const renderDrawer = !props.renderDrawer
       ? null
-      : props.renderDrawer({ isOpen: state.isDrawerOpen });
+      : props.renderDrawer({
+          isOpen: state.isDrawerOpen,
+          closeDrawer: this.closeDrawer,
+        });
     return (
       <>
         <AppBar position="static" color="inherit">
