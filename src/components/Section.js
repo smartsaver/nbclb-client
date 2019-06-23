@@ -7,7 +7,7 @@ const styles = theme => ({
     minHeight: '10rem',
     padding: '3rem 1rem',
     [theme.breakpoints.up('md')]: {
-      padding: '3rem 4rem',
+      padding: '2.75rem 4rem',
     },
   },
   container: {
@@ -28,7 +28,12 @@ function Section(props) {
   const { classes } = props;
   return (
     <section id={props.name} className={`${classes.root} ${props.className}`}>
-      <Typography variant="body1" component="div" className={classes.container}>
+      <Typography
+        paragraph
+        variant="body1"
+        component="div"
+        className={classes.container}
+      >
         {props.children}
       </Typography>
     </section>
