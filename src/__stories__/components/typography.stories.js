@@ -3,10 +3,12 @@ import { storiesOf } from '@storybook/react';
 // import { action } from '@storybook/addon-actions';
 // import { linkTo } from '@storybook/addon-links';
 import Typography from '@material-ui/core/Typography';
+import theme from '../../theme/muiThemeConfig';
+import { MuiThemeProvider } from '@material-ui/core/styles';
 
 storiesOf('Typography', module).add('Headings, Body', () => {
   return (
-    <>
+    <MuiThemeProvider theme={theme}>
       <Typography variant="h1" component="h2" gutterBottom>
         h1. Heading
       </Typography>
@@ -54,6 +56,6 @@ storiesOf('Typography', module).add('Headings, Body', () => {
       <Typography variant="overline" display="block" gutterBottom>
         overline text
       </Typography>
-    </>
+    </MuiThemeProvider>
   );
 });
