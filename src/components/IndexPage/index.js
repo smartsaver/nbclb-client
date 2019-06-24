@@ -4,6 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 import { bannerContent } from './content';
 import SEO from '../SEO';
 import withRoot from '../../theme/withRoot';
+import Layout from '../Layout';
 
 const style = {
   root: {
@@ -20,13 +21,15 @@ function IndexPage(props) {
   return (
     <>
       <SEO title="Home" />
-      <main className={classes.root}>
-        <Typography variant="body1">
-          <a href="./#en">en</a> / <a href="./#fr">fr</a>
-        </Typography>
-        <Typography variant="h1">{bannerContent[locale].title}</Typography>
-        <Typography variant="body1">{bannerContent[locale].text}</Typography>
-      </main>
+      <Layout>
+        <main className={classes.root}>
+          <Typography variant="body1">
+            <a href="./#en">en</a> / <a href="./#fr">fr</a>
+          </Typography>
+          <Typography variant="h1">{bannerContent[locale].title}</Typography>
+          <Typography variant="body1">{bannerContent[locale].text}</Typography>
+        </main>
+      </Layout>
     </>
   );
 }

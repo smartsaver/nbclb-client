@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import withStyles from '@material-ui/core/styles/withStyles';
 import {
   AppBar,
-  Typography,
   Toolbar,
   // Button,
   IconButton,
@@ -24,9 +23,6 @@ const styles = theme => ({
       justifyContent: 'flex-end',
     },
   },
-  brand: {
-    marginRight: '1.5rem',
-  },
   burger: {
     marginLeft: 'auto',
     [theme.breakpoints.up('md')]: {
@@ -38,6 +34,7 @@ const styles = theme => ({
 
 /**
  *
+ * @param {*} brand - navbar brand to the left side
  * @param {*} menuEnd - navbar right side.
  * @param {*} renderDrawer({ isOpen, closeDrawer }) - render prop drawer component
  * @param {object} classes - styles injected
@@ -58,23 +55,25 @@ class Navbar extends Component {
     this.setState({ isDrawerOpen: false });
   };
 
-  render() {
-    const { classes } = this.props;
+  renderDrawer = () => {
     const { props, state } = this;
-    const renderDrawer = !props.renderDrawer
+    return !props.renderDrawer
       ? null
       : props.renderDrawer({
           isOpen: state.isDrawerOpen,
           closeDrawer: this.closeDrawer,
         });
+  };
+
+  render() {
+    const { classes } = this.props;
+    const { props } = this;
     return (
       <>
         <AppBar position="static" color="inherit">
           <nav className={classes.container}>
             <Toolbar>
-              <Typography className={classes.brand} variant="h6">
-                Navbar
-              </Typography>
+              {props.brand}
               <div className={classes.menuEnd}>
                 {props.menuEnd || null}
                 {/* <Button color="inherit">Login</Button> */}
@@ -91,7 +90,7 @@ class Navbar extends Component {
             </Toolbar>
           </nav>
         </AppBar>
-        {renderDrawer}
+        {this.renderDrawer()}
       </>
     );
   }
