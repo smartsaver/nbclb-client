@@ -1,5 +1,5 @@
 {
-  "name": "nbclb.ca-client",
+  "name": "nbclb-client",
   "version": "1.0.0",
   "description": "Find out if your child is eligible to receive the Canada Learning Bond, a grant of $500 to $2,000 from the Government of Canada that is deposited directly into the Registered Education Savings Plan (RESP) of an eligible child to help with the costs of education after high school.",
   "main": "index.html",
@@ -16,14 +16,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/jcunanan05/nbclb.ca-client"
+    "url": "git+ssh://git@github.com/smartsaver/nbclb-client"
   },
   "author": "Jonathan Albert Cunanan",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jcunanan05/nbclb.ca-client/issues"
+    "url": "https://github.com/smartsaver/nbclb-client/issues"
   },
-  "homepage": "https://github.com/jcunanan05/nbclb.ca-client#readme",
+  "homepage": "https://github.com/smartsaver/nbclb-client#readme",
   "keywords": [],
   "dependencies": {
     "@material-ui/core": "^3.9.3",
