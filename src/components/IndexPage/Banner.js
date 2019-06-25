@@ -1,5 +1,5 @@
 import React from 'react';
-import Section from '../Section';
+import Section from '../Section/SectionWithoutContainer';
 import bannerLogo from '../../images/anetas-son-overlay.jpg';
 import withStyles from '@material-ui/core/styles/withStyles';
 import { Typography } from '@material-ui/core';
