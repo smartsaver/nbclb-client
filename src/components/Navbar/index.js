@@ -70,7 +70,7 @@ class Navbar extends Component {
     const { props } = this;
     return (
       <>
-        <AppBar position="static" color="inherit">
+        <AppBar position="sticky" color="inherit">
           <nav className={classes.container}>
             <Toolbar>
               {props.brand}
