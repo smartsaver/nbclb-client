@@ -8,7 +8,7 @@ const theme = createMuiTheme({
       fontWeight: 300,
     },
     h2: {
-      fontSize: 40,
+      fontSize: 32,
       fontWeight: 400,
     },
     h3: {
