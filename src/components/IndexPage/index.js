@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 // import Typography from '@material-ui/core/Typography';
 // import { withStyles } from '@material-ui/core/styles';
 import { bannerContent } from './content';
@@ -7,19 +7,29 @@ import withRoot from '../../theme/withRoot';
 import Layout from '../Layout';
 import Banner from './Banner';
 
-function IndexPage(props) {
-  const { location } = props;
-  const locale = location.hash.substring(1) || 'en';
-  return (
-    <>
-      <SEO title="Home" />
-      <Layout>
-        <main>
-          <Banner content={bannerContent[locale]} />
-        </main>
-      </Layout>
-    </>
-  );
+class IndexPage extends Component {
+  state = {
+    locale: 'en',
+  };
+
+  handleLocaleChange = value => {
+    if (!(value === 'en' || value === 'fr')) return;
+    this.setState({ locale: value });
+  };
+
+  render() {
+    const { state } = this;
+    return (
+      <>
+        <SEO title="Home" />
+        <Layout onLocaleChange={this.handleLocaleChange}>
+          <main>
+            <Banner content={bannerContent[state.locale]} />
+          </main>
+        </Layout>
+      </>
+    );
+  }
 }
 
 export default withRoot(IndexPage);
