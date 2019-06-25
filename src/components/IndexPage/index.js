@@ -1,38 +1,46 @@
-import React from 'react';
-import Typography from '@material-ui/core/Typography';
-import { withStyles } from '@material-ui/core/styles';
-// import { bannerContent } from './content';
+import React, { Component } from 'react';
+import { bannerContent, bodyContent, applyContent } from './content';
 import SEO from '../SEO';
 import withRoot from '../../theme/withRoot';
-// import Layout from '../Layout';
+import Layout from '../Layout';
+import Banner from './Banner';
+import BodySections from './BodySections';
+import Apply from './Apply';
+import withStyles from '@material-ui/core/styles/withStyles';
 
-const style = {
-  root: {
-    padding: '3rem',
-  },
-  title: {
-    flex: 1,
+const styles = {
+  '@global': {
+    html: {
+      scrollBehavior: 'smooth',
+    },
   },
 };
 
-function IndexPage(props) {
-  const { classes, location } = props;
-  const locale = location.hash.substring(1) || 'en';
-  return (
-    <>
-      <SEO title="Home" />
-      <main className={classes.root}>
-        <Typography variant="body1">
-          <a href="./#en">en</a> / <a href="./#fr">fr</a>
-        </Typography>
-        {/* <Typography variant="h1">{bannerContent[locale].title}</Typography>
-        <Typography variant="body1">{bannerContent[locale].text}</Typography> */}
-        <Typography variant="h1">Welcome to NBCLB.ca</Typography>
-      </main>
-      {/* <Layout>
-      </Layout> */}
-    </>
-  );
+class IndexPage extends Component {
+  state = {
+    locale: 'en',
+  };
+
+  handleLocaleChange = value => {
+    if (!(value === 'en' || value === 'fr')) return;
+    this.setState({ locale: value });
+  };
+
+  render() {
+    const { state } = this;
+    return (
+      <>
+        <SEO title="Home" />
+        <Layout onLocaleChange={this.handleLocaleChange}>
+          <main>
+            <Banner content={bannerContent[state.locale]} />
+            <BodySections content={bodyContent} locale={state.locale} />
+            <Apply content={applyContent[state.locale]} />
+          </main>
+        </Layout>
+      </>
+    );
+  }
 }
 
-export default withRoot(withStyles(style)(IndexPage));
+export default withRoot(withStyles(styles)(IndexPage));

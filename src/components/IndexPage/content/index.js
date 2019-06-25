@@ -1,16 +1,11 @@
-const bannerContent = {
-  en: {
-    title: 'Hello',
-    text: 'This is in english.',
-  },
-  fr: {
-    title: 'Bonjour',
-    text: "C'est en français.",
-  },
-};
+import bannerContent from './bannerContent';
+import bodyContent from './bodyContent';
+import applyContent from './applyContent';
 
-export { bannerContent };
+export { bannerContent, bodyContent, applyContent };
 
 export default {
   bannerContent,
+  bodyContent,
+  applyContent,
 };
