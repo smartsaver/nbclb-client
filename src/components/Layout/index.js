@@ -4,6 +4,7 @@ import Navbar from '../Navbar';
 import NavbarDrawer from '../Navbar/NavbarDrawer';
 import withStyles from '@material-ui/core/styles/withStyles';
 import { Button, Typography, ListItem } from '@material-ui/core';
+import Footer from './Footer';
 
 const styles = {
   navbarLogo: {
@@ -95,6 +96,7 @@ function Layout(props) {
         )}
       />
       {props.children}
+      <Footer />
     </>
   );
 }
