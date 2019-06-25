@@ -6,6 +6,15 @@ import Layout from '../Layout';
 import Banner from './Banner';
 import BodySections from './BodySections';
 import Apply from './Apply';
+import withStyles from '@material-ui/core/styles/withStyles';
+
+const styles = {
+  '@global': {
+    html: {
+      scrollBehavior: 'smooth',
+    },
+  },
+};
 
 class IndexPage extends Component {
   state = {
@@ -34,4 +43,4 @@ class IndexPage extends Component {
   }
 }
 
-export default withRoot(IndexPage);
+export default withRoot(withStyles(styles)(IndexPage));
