@@ -5,6 +5,9 @@ import withStyles from '@material-ui/core/styles/withStyles';
 const styles = theme => ({
   root: {
     minHeight: '10rem',
+    '&:nth-child(2n)': {
+      backgroundColor: '#efefef',
+    },
   },
   container: {
     margin: '0 auto',
