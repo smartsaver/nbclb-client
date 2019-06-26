@@ -4,7 +4,9 @@ import withStyles from '@material-ui/core/styles/withStyles';
 
 const styles = theme => ({
   root: {
-    minHeight: '10rem',
+    display: 'flex',
+    alignItems: 'center',
+    minHeight: '15rem',
     '&:nth-child(2n)': {
       backgroundColor: '#efefef',
     },
@@ -16,6 +18,9 @@ const styles = theme => ({
     padding: '3rem 1rem',
     [theme.breakpoints.up('md')]: {
       padding: '2.75rem 4rem',
+    },
+    [theme.breakpoints.up('md')]: {
+      padding: '2.75rem 6rem',
     },
   },
 });
