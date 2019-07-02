@@ -23,6 +23,14 @@ If you cannot see the form, [click here.](${respUrl.en})
   `),
     marked(`
 For more information contact us at 1-855-737-7252 (1-855-RESP-CLB) or info@smartsaver.org.
+
+Or contact 1 800 O-Canada:
+
+__Telephone:__ 1 800 O-Canada (1-800-622-6232)
+
+__TTY:__ 1-800-926-9105
+
+__From outside Canada:__ Call 1 800 O-Canada from abroad
   `),
     respUrl.en
   ),
