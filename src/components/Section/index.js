@@ -19,8 +19,8 @@ const styles = theme => ({
     [theme.breakpoints.up('md')]: {
       padding: '2.75rem 4rem',
     },
-    [theme.breakpoints.up('md')]: {
-      padding: '2.75rem 6rem',
+    [theme.breakpoints.up('lg')]: {
+      padding: '2.75rem 8rem',
     },
   },
 });
