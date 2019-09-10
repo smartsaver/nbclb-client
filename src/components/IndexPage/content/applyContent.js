@@ -10,8 +10,8 @@ function addContent(title, text, footer, respUrl) {
 }
 
 const respUrl = {
-  en: 'https://mysmartfuture.org/clbnb',
-  fr: 'https://moneducavenir.org/clbnb',
+  en: 'https://mysmartfuture.org/signup/clbnb',
+  fr: 'https://moneducavenir.org/signup/clbnb',
 };
 
 const applyContent = {

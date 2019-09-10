@@ -26,38 +26,47 @@ const styles = {
 function BodySections(props) {
   const { classes, content } = props;
   const SectionForEn = () => {
-    if (props.locale !== 'en') return null;
-    return (
-      <>
-        <Section>
-          <Typography variant="h2">
-            {content[props.locale].funding.title}
-          </Typography>
-          <EscapedHtml html={content[props.locale].funding.text} />
-        </Section>
-        <Section>
-          <Typography variant="h2">
-            {content[props.locale].eligibility.title}
-          </Typography>
-          <EscapedHtml html={content[props.locale].eligibility.text} />
-        </Section>
+    if (props.locale === 'en')
+      return (
+        <>
+          <Section>
+            <Typography variant="h2">
+              {content[props.locale].funding.title}
+            </Typography>
+            <EscapedHtml html={content[props.locale].funding.text} />
+          </Section>
+          <Section>
+            <Typography variant="h2">
+              {content[props.locale].eligibility.title}
+            </Typography>
+            <EscapedHtml html={content[props.locale].eligibility.text} />
+          </Section>
+          <Section>
+            <Typography variant="h2">
+              {content[props.locale].apply.title}
+            </Typography>
+            <EscapedHtml html={content[props.locale].apply.text} />
+          </Section>
+        </>
+      );
+    else if (props.locale === 'fr')
+      return (
         <Section>
           <Typography variant="h2">
             {content[props.locale].apply.title}
           </Typography>
           <EscapedHtml html={content[props.locale].apply.text} />
         </Section>
-      </>
-    );
+      );
   };
   return (
     <>
       <Section>
-        {!content[props.locale].didYouKnow.title ? null : (
+        {content[props.locale].didYouKnow.title ? (
           <Typography variant="h2">
             {content[props.locale].didYouKnow.title}
           </Typography>
-        )}
+        ) : null}
         <EscapedHtml html={content[props.locale].didYouKnow.text} />
         <div className={classes.video}>
           <iframe
