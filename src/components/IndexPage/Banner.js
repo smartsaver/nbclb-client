@@ -1,6 +1,6 @@
 import React from 'react';
 import Section from '../Section/SectionWithoutContainer';
-import bannerLogo from '../../images/anetas-son-overlay.jpg';
+import bannerLogo from '../../images/family.jpg';
 import withStyles from '@material-ui/core/styles/withStyles';
 import { Typography } from '@material-ui/core';
 
@@ -20,13 +20,13 @@ const styles = theme => ({
     background: `url(${bannerLogo}) no-repeat`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-    backgroundAttachment: 'fixed',
     minHeight: '38rem',
-    [theme.breakpoints.up('md')]: {
-      backgroundPositionY: '-4rem',
+    [theme.breakpoints.up('lg')]: {
+      backgroundPositionY: '-9.5rem',
     },
   },
   title: {
+    fontWeight: 500,
     color: 'white',
     textShadow: '1px 1.3px rgba(17,17,17,.7);',
     margin: '0 1rem',

@@ -19,6 +19,14 @@ const fr = {
 Vérifiez si votre enfant est admissible au Bon d’études canadien ! Cet incitatif à l’épargne-études du gouvernement du Canada, d’un montant allant de 500 $ à 2000 $, est déposée directement dans le Régime enregistré d’épargne-études (REEE) des enfants admissibles et est utilisable pour défrayer les coûts liés aux études postsecondaires.
   `)
   ),
+  apply: addContent(
+    'Super Comptoirs',
+    marked(`
+La SIÉS, l’Agence du Revenu du Canada et Service Canada font équipe pour aider les Néo-Brunswickois ayant un revenu modeste à produire leur déclaration de revenus, à obtenir un numéro d’assurance sociale pour leurs enfants ainsi qu'à les inscrire au programme de Bon d'études canadien, et ce, en même temps et au même endroit.
+
+Pour plus de renseignements, [cliquez ici](https://www2.gnb.ca/content/gnb/fr/ministeres/sies/bon.html).
+  `)
+  ),
 };
 
 const en = {
@@ -48,9 +56,9 @@ Money comes from the Government of Canada and is deposited directly into the Reg
     marked(`
 Children eligible for the Canada Learning Bond:
 * Children born on or after January 1, 2004.
-* A net family income of $46,605 or less for a family with up to 3 kids.
+* A net family income of $47,630 or less for a family with up to 3 kids.
 
-*For families with more than 3 children [click here.](https://www.canada.ca/en/employment-social-development/services/learning-bond/eligibility.html )
+*For families with more than 3 children [click here.](https://www.canada.ca/en/employment-social-development/services/learning-bond/eligibility.html)
   `)
   ),
   apply: addContent(
@@ -58,8 +66,11 @@ Children eligible for the Canada Learning Bond:
     marked(`
 A Social Insurance Number for you and your child. The child’s primary caregiver must have applied for the Canada Child Benefit for the child through the Canada Revenue Agency and continue to file income tax returns, allowing eligibility for the Canada Learning Bond to be validated.
 
-You can get help at a free tax preparation clinic near you and some clinics help with taxes all year.
-For more information, visit the nearest [Community Volunteer Income Tax Program clinic](https://apps.cra-arc.gc.ca/ebci/oecv/external/prot/startClinicSearch.action?request_locale=en_CA) in your community.
+You can get help at a free tax preparation clinic near you and some clinics help with taxes all year. 
+
+ESIC, the Canada Revenue Agency and Service Canada are teaming up to help New Brunswickers with a modest income file their taxes, get their children a Social Insurance Number and sign them up for the Canada Learning Bond all at the same time and location.
+
+For more information, [click here](https://www2.gnb.ca/content/gnb/en/departments/esic/bond.html)
   `)
   ),
 };

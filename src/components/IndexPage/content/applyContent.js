@@ -10,8 +10,8 @@ function addContent(title, text, footer, respUrl) {
 }
 
 const respUrl = {
-  en: 'https://mysmartfuture.org/clbnb',
-  fr: 'https://moneducavenir.org/clbnb',
+  en: 'https://mysmartfuture.org/signup/clbnb',
+  fr: 'https://moneducavenir.org/signup/clbnb',
 };
 
 const applyContent = {
@@ -36,7 +36,7 @@ __From outside Canada:__ Call 1 800 O-Canada from abroad
   fr: addContent(
     'Demandez le Bon d’études canadien pour votre enfant dès aujourd’hui !',
     marked(`
-Si votre enfant est né en 2004 ou après et que votre revenu familial net est de 46 605 $* ou moins, vous pouvez profiter de cette occasion d’épargner dès aujourd’hui pour les études de votre enfant. Vous n’avez aucun frais à payer pour demander le Bon d’études canadien, ni aucune cotisation à faire.
+Si votre enfant est né en 2004 ou après et que votre revenu familial net est de 47,630 $* ou moins, vous pouvez profiter de cette occasion d’épargner dès aujourd’hui pour les études de votre enfant. Vous n’avez aucun frais à payer pour demander le Bon d’études canadien, ni aucune cotisation à faire.
 
 *pour les familles de trois enfants ou moins. Si votre famille compte plus de trois enfants, [cliquez ici](https://www.canada.ca/fr/emploi-developpement-social/services/aide-financiere-etudiants/epargne-etudes/reee/promoteurs-reee/bulletin/avis-2018-772.html).`) +
       marked(`Le lien ne s’ouvre pas, [cliquez ici](${respUrl.fr}).`),
