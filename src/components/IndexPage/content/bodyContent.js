@@ -48,9 +48,9 @@ Money comes from the Government of Canada and is deposited directly into the Reg
     marked(`
 Children eligible for the Canada Learning Bond:
 * Children born on or after January 1, 2004.
-* A net family income of $46,605 or less for a family with up to 3 kids.
+* A net family income of $47,630 or less for a family with up to 3 kids.
 
-*For families with more than 3 children [click here.](https://www.canada.ca/en/employment-social-development/services/learning-bond/eligibility.html )
+*For families with more than 3 children [click here.](https://www.canada.ca/en/employment-social-development/services/learning-bond/eligibility.html)
   `)
   ),
   apply: addContent(
