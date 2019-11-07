@@ -6,9 +6,20 @@ import withStyles from '@material-ui/core/styles/withStyles';
 
 const styles = {
   frame: {
-    width: '100%',
     margin: '1rem 0',
     background: 'white',
+  },
+  frameWrapper: {
+    position: 'relative',
+  },
+  frameLink: {
+    display: 'inline-block',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+  },
+  frameSize: {
+    width: '100%',
     minHeight: '43rem',
   },
 };
@@ -19,13 +30,24 @@ function Apply(props) {
     <Section name="apply">
       <Typography variant="h2">{content.title}</Typography>
       <EscapedHtml html={content.text} />
-      <iframe
-        id="resp"
-        className={classes.frame}
-        src={content.respUrl}
-        frameBorder="0"
-        title="StartMyResp Application"
-      />
+
+      <div className={classes.frameWrapper}>
+        <a
+          className={`${classes.frameLink} ${classes.frameSize}`}
+          href={content.respUrl}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <Typography variant="srOnly">StartMyResp Application</Typography>
+        </a>
+        <iframe
+          id="resp"
+          className={`${classes.frame} ${classes.frameSize}`}
+          src={content.respUrl}
+          frameBorder="0"
+          title="StartMyResp Application"
+        />
+      </div>
       <EscapedHtml html={content.footer} />
     </Section>
   );
