@@ -18,7 +18,7 @@ const styles = {
 
 class IndexPage extends Component {
   state = {
-    locale: 'fr',
+    locale: 'en',
   };
 
   handleLocaleChange = value => {
