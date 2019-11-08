@@ -10,8 +10,8 @@ function addContent(title, text, footer, respUrl) {
 }
 
 const respUrl = {
-  en: 'https://MySmartFUTURE.org/NewBrunswickCLB',
-  fr: 'https://moneducavenir.org/NouveauBrunswickBEC',
+  en: 'https://MySmartFUTURE.org/signup/NewBrunswickCLB',
+  fr: 'https://moneducavenir.org/signup/NouveauBrunswickBEC',
 };
 
 const applyContent = {
