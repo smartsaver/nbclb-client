@@ -28,8 +28,11 @@ const styles = theme => ({
   title: {
     fontWeight: 500,
     color: 'white',
-    textShadow: '1px 1.3px rgba(17,17,17,.7);',
+    textShadow: '1px 1.5px rgba(17,17,17,.7);',
     margin: '0 1rem',
+    [theme.breakpoints.down('sm')]: {
+      textAlign: 'center',
+    },
     [theme.breakpoints.up('md')]: {
       margin: '0 4rem',
       textAlign: 'center',
