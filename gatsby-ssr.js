@@ -28,7 +28,8 @@ function replaceRenderer({
       dangerouslySetInnerHTML={{
         __html: muiPageContext.sheetsRegistry.toString(),
       }}
-    />,
+    />
+    ,
   ])
 }
 

@@ -1,14 +1,20 @@
 import React from 'react';
-import navbarLogo from '../../images/esic-logo.png';
+import navbarLogoEn from '../../images/pei-logo-en.jpg';
+import navbarLogoFr from '../../images/pei-logo-fr.jpg';
 import Navbar from '../Navbar';
 import NavbarDrawer from '../Navbar/NavbarDrawer';
 import withStyles from '@material-ui/core/styles/withStyles';
 import { Button, Typography, ListItem } from '@material-ui/core';
 import Footer from './Footer';
 
+let navbarLogo = navbarLogoEn;
+
 const styles = {
   navbarLogo: {
     maxWidth: '10rem',
+    height: '80px',
+    paddingTop: '5px',
+    paddingBottom: '5px',
   },
   linkButton: {
     textDecoration: 'none',
@@ -60,13 +66,17 @@ function Layout(props) {
   );
   const handleLocaleClick = event => {
     const locale = event.target.textContent;
+    if (locale == "en")
+      navbarLogo = navbarLogoEn;
+    else 
+      navbarLogo = navbarLogoFr;
     props.onLocaleChange(locale);
   };
   return (
     <>
       <Navbar
         brand={
-          <img className={classes.navbarLogo} src={navbarLogo} alt="ESIC" />
+          <img className={classes.navbarLogo} src={navbarLogo} alt="PEI" />
         }
         menuEnd={
           <>

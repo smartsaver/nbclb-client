@@ -11,7 +11,7 @@ function addContent(title, text, footer, respUrl) {
 
 const respUrl = {
   en: 'https://mysmartfuture.org/pei',
-  fr: 'https://moneducavenir.org/pei',
+  fr: 'https://mysmartfuture.org/pei',
 };
 
 const applyContent = {
