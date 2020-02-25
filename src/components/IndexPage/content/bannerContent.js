@@ -21,7 +21,8 @@ function banner(title, text = '') {
 
 const bannerContent = {
   en: banner(
-    'Saving for your children’s education is easy with the Canada Learning Bond (CLB)! The CLB offers families with low to modest incomes a simple way to start saving now for their children’s future education.'
+    'Canada Learning Bonds',
+    'Your child could be eligible to receive up to $2,000 in free money for their post-secondary education from the Canada Learning Bond (CLB).'
   ),
   fr: banner(
     'Saviez-vous que les jeunes ont 50% plus de chances de continuer leurs études après le secondaire lorsqu’ils ont de l’argent de côté pour le faire ? L’épargne pour les études de vos enfants est facile avec le Bon d’études Canadien (BEC)'

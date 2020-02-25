@@ -1,8 +1,8 @@
 import React from 'react';
-import Section from '../Section/SectionWithoutContainer';
-import bannerLogo from '../../images/family.jpg';
-import withStyles from '@material-ui/core/styles/withStyles';
 import { Typography } from '@material-ui/core';
+import withStyles from '@material-ui/core/styles/withStyles';
+import Section from '../Section/SectionWithoutContainer';
+import bannerLogo from '../../images/anetas-son-overlay.jpg';
 
 const styles = theme => ({
   root: {
@@ -45,8 +45,12 @@ function Banner(props) {
   return (
     <Section className={classes.root}>
       <div className={classes.container + ' ' + classes.bannerLogo}>
-        <Typography className={classes.title} variant="h2">
+        <Typography className={classes.title} variant="h1">
           {content.title}
+        </Typography>
+        <br/>
+        <Typography className={classes.title} variant="h2">
+          {content.text}
         </Typography>
       </div>
     </Section>

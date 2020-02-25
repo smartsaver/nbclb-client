@@ -32,45 +32,36 @@ Pour plus de renseignements, [cliquez ici](https://www2.gnb.ca/content/gnb/fr/mi
 const en = {
   ...neutralContent,
   didYouKnow: addContent(
-    'Did you know?',
+    'Canada Learning Bonds?',
     marked(`
-Youth with savings for their education are 31% more likely to have a post-secondary mindset than those who have none.
+Your child could be eligible to receive up to $2,000 in free money for their post-secondary education from the Canada Learning Bond (CLB).
 
-Children with education savings of up to $500 are 3 times more likely to enroll in post-secondary and 4 times more likely to graduate.
+If your child is eligible, the Government of Canada will deposit the money directly into a bank account called a Registered Education Savings Plan (RESP). All you have to do is register.
 
-The Economic and Social Inclusion Corporation is working to increase post-secondary opportunities for youth. By focusing on the 47,000 + children in New Brunswick who are eligible for the Canada Learning Bond, we can build a better future for our children and province.
+You don’t have to pay fees or put any money into the RESP for your child to receive the CLB.
   `)
   ),
   funding: addContent(
-    'What funding is available?',
+    'Benefit amount',
     marked(`
-Eligible children receive $500 initially and $100 more each year they continue to be eligible. The CLB is available up to the age of 15 for a maximum of $2,000.
-
-You do not have to put any of your own money into the RESP to receive the Canada Learning Bond.
-
-Money comes from the Government of Canada and is deposited directly into the Registered Education Savings Plan (RESP).
+Children receive $500 initially and $100 more each year that they’re eligible. They can keep receiving the CLB until they’re 15, or until they’ve received a maximum of $2,000.
   `)
   ),
   eligibility: addContent(
     'Eligibility',
     marked(`
-Children eligible for the Canada Learning Bond:
+Families can register for the CLB if they have:
 * Children born on or after January 1, 2004.
-* A net family income of $47,630 or less for a family with up to 3 kids.
-
-*For families with more than 3 children [click here.](https://www.canada.ca/en/employment-social-development/services/learning-bond/eligibility.html)
+* Canadian residency or citizenship.
+* A net family income of $46,605 or less for a family with up to 3 children – if you have more than 3, visit the [Canada Revenue Agency’s website](https://www.canada.ca/en/employment-social-development/services/learning-bond/eligibility.html) to find your income limit.
   `)
   ),
   apply: addContent(
-    'What do I need to apply?',
+    'How to Apply',
     marked(`
-A Social Insurance Number for you and your child. The child’s primary caregiver must have applied for the Canada Child Benefit for the child through the Canada Revenue Agency and continue to file income tax returns, allowing eligibility for the Canada Learning Bond to be validated.
+If you already have an RESP, talk to your bank or RESP provider to let them know you want to register for the CLB.
 
-You can get help at a free tax preparation clinic near you and some clinics help with taxes all year. 
-
-ESIC, the Canada Revenue Agency and Service Canada are teaming up to help New Brunswickers with a modest income file their taxes, get their children a Social Insurance Number and sign them up for the Canada Learning Bond all at the same time and location.
-
-For more information, [click here](https://www2.gnb.ca/content/gnb/en/departments/esic/bond.html)
+If you don’t have an RESP, you can open one and register for your child’s CLB online or by phone.
   `)
   ),
 };

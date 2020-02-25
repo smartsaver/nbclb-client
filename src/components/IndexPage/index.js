@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import { bannerContent, bodyContent, applyContent } from './content';
+import { bannerContent, bodyContent, applyContent, postApplyContent } from './content';
+import withStyles from '@material-ui/core/styles/withStyles';
 import SEO from '../SEO';
 import withRoot from '../../theme/withRoot';
-import Layout from '../Layout';
-import Banner from './Banner';
 import BodySections from './BodySections';
+import Layout from '../Layout';
 import Apply from './Apply';
-import withStyles from '@material-ui/core/styles/withStyles';
+import PostApply from './PostApply';
+import Banner from './Banner';
 
 const styles = {
   '@global': {
@@ -36,6 +37,7 @@ class IndexPage extends Component {
             <Banner content={bannerContent[state.locale]} />
             <BodySections content={bodyContent} locale={state.locale} />
             <Apply content={applyContent[state.locale]} />
+            <PostApply content={postApplyContent[state.locale]} />
           </main>
         </Layout>
       </>

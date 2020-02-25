@@ -1,5 +1,5 @@
 import React from 'react';
-import navbarLogo from '../../images/esic-logo.png';
+import navbarLogo from '../../images/nova-scotia-logo.jpg';
 import Navbar from '../Navbar';
 import NavbarDrawer from '../Navbar/NavbarDrawer';
 import withStyles from '@material-ui/core/styles/withStyles';
@@ -42,6 +42,7 @@ const styles = {
 
 function Layout(props) {
   const { classes } = props;
+  
   const ApplyButton = () => (
     <Button variant="contained" color="primary">
       Apply
@@ -66,20 +67,13 @@ function Layout(props) {
     <>
       <Navbar
         brand={
-          <img className={classes.navbarLogo} src={navbarLogo} alt="ESIC" />
+          <img className={classes.navbarLogo} src={navbarLogo} alt="Nova Scotia" />
         }
         menuEnd={
           <>
             <a href="./#apply" className={classes.linkButton}>
               <ApplyButton />
             </a>
-            <Typography
-              className={classes.localeContainer}
-              variant="body1"
-              component="div"
-            >
-              <LocaleButtonList />
-            </Typography>
           </>
         }
         renderDrawer={({ isOpen, closeDrawer }) => (
@@ -89,9 +83,6 @@ function Layout(props) {
                 <ApplyButton />
               </ListItem>
             </a>
-            <ListItem className={classes.drawerItem}>
-              <LocaleButtonList />
-            </ListItem>
           </NavbarDrawer>
         )}
       />

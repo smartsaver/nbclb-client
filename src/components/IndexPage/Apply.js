@@ -1,8 +1,8 @@
 import React from 'react';
-import Section from '../Section';
 import { Typography } from '@material-ui/core';
-import EscapedHtml from '../EscapedHtml';
 import withStyles from '@material-ui/core/styles/withStyles';
+import Section from '../Section';
+import EscapedHtml from '../EscapedHtml';
 
 const styles = {
   frame: {
@@ -17,16 +17,16 @@ function Apply(props) {
   const { content, classes } = props;
   return (
     <Section name="apply">
-      <Typography variant="h2">{content.title}</Typography>
-      <EscapedHtml html={content.text} />
+      <Typography variant="h2">{content.apply.title}</Typography>
+      <EscapedHtml html={content.apply.text} />
       <iframe
         id="resp"
         className={classes.frame}
-        src={content.respUrl}
+        src={content.apply.respUrl}
         frameBorder="0"
         title="StartMyResp Application"
       />
-      <EscapedHtml html={content.footer} />
+      <EscapedHtml html={content.beforeYouStart.footer} />
     </Section>
   );
 }

@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `NBCLB.ca`,
-    description: `Find out if your child is eligible to receive the Canada Learning Bond, a grant of $500 to $2,000 from the Government of Canada that is deposited directly into the Registered Education Savings Plan (RESP) of an eligible child to help with the costs of education after high school.`,
+    title: `Nova Scotia CLB`,
+    description: `Your child could be eligible to receive up to $2,000 in free money for their post-secondary education from the Canada Learning Bond (CLB).`,
     author: `SmartSAVER.org <info@smartsaver.org>`,
   },
   plugins: [
@@ -25,7 +25,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: `UA-141953774-1`,
+        trackingId: `UA-137044672-1`,
       },
     },
   ],
