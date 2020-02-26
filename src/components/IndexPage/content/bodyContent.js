@@ -38,7 +38,7 @@ Youth with savings for their education are 31% more likely to have a post-second
 
 Children with education savings of up to $500 are 3 times more likely to enroll in post-secondary and 4 times more likely to graduate.
 
-The Economic and Social Inclusion Corporation is working to increase post-secondary opportunities for youth. By focusing on the 47,000 + children in New Brunswick who are eligible for the Canada Learning Bond, we can build a better future for our children and province.
+The Province of Prince Edward Island is working to increase post-secondary opportunities for youth. By focusing on the 10,000 children in Prince Edward Island who are eligible for the Canada Learning Bond, we can build a better future for our children and a stronger, more vibrant province.
   `)
   ),
   funding: addContent(
@@ -58,7 +58,7 @@ Children eligible for the Canada Learning Bond:
 * Children born on or after January 1, 2004.
 * A net family income of $47,630 or less for a family with up to 3 kids.
 
-*For families with more than 3 children [click here.](https://www.canada.ca/en/employment-social-development/services/learning-bond/eligibility.html)
+For families with more than 3 children, [click here.](https://www.canada.ca/en/employment-social-development/services/learning-bond/eligibility.html)
   `)
   ),
   apply: addContent(
@@ -66,18 +66,44 @@ Children eligible for the Canada Learning Bond:
     marked(`
 A Social Insurance Number for you and your child. The child’s primary caregiver must have applied for the Canada Child Benefit for the child through the Canada Revenue Agency and continue to file income tax returns, allowing eligibility for the Canada Learning Bond to be validated.
 
-You can get help at a free tax preparation clinic near you and some clinics help with taxes all year. 
+You can get help at a free tax preparation clinic near you. 
 
-ESIC, the Canada Revenue Agency and Service Canada are teaming up to help New Brunswickers with a modest income file their taxes, get their children a Social Insurance Number and sign them up for the Canada Learning Bond all at the same time and location.
-
-For more information, [click here](https://www2.gnb.ca/content/gnb/en/departments/esic/bond.html)
+The Province of Prince Edward Island, the Canada Revenue Agency and Service Canada are teaming up to help Islanders with a modest income file their taxes, get their children a Social Insurance Number and sign them up for the Canada Learning Bond all at the same time and location. 
   `)
   ),
 };
 
+const table = [
+  {
+    city: 'Charlottetown',
+    dateAndTime: marked(`
+Saturday, March 28, 2020  
+10:00 a.m. to 3:00 p.m.
+    `),
+    location: marked(`
+Colonel Gray High School  
+Cafeteria  
+175 Spring Park Road
+    `),
+  },
+  {
+    city: 'Summerside',
+    dateAndTime: marked(`
+Saturday, April 4, 2020  
+10:00 a.m. to 3:00 p.m.
+    `),
+    location: marked(`
+Summerside Intermediate  
+School Cafeteria  
+247 Central Street
+    `),
+  }
+]
+
 const bodyContent = {
   en,
   fr,
+  table
 };
 
 export default bodyContent;

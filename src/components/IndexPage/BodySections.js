@@ -1,8 +1,11 @@
 import React from 'react';
 import { Typography } from '@material-ui/core';
 import withStyles from '@material-ui/core/styles/withStyles';
+import eligibilityImage from '../../images/family_with_stroller.jpg';
 import Section from '../Section';
 import EscapedHtml from '../EscapedHtml';
+import ApplyTable from './ApplyTable';
+import './BodySections.css'
 
 const styles = {
   video: {
@@ -14,6 +17,28 @@ const styles = {
       minHeight: '20rem',
     },
   },
+  eligibility: {
+    background: `url(${eligibilityImage}) no-repeat`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  },
+  eligibilityImage: {
+    width: "100%",
+    maxHeight: '33%',
+    backgroundPosition: 'center',
+  },
+  eligibilityTitle: {
+    fontWeight: 500,
+    color: 'white',
+    textShadow: '1.5px 2px rgba(17,17,17,.7)',
+    margin: '0 1rem',
+  },
+  eligibilityText: {
+    fontWeight: 700,
+    color: 'white',
+    textShadow: '1.5px 2px rgba(17,17,17,.7)',
+    margin: '0 1rem',
+  }
 };
 
 /**
@@ -35,17 +60,21 @@ function BodySections(props) {
             </Typography>
             <EscapedHtml html={content[props.locale].funding.text} />
           </Section>
-          <Section>
-            <Typography variant="h2">
+          <Section style={styles.eligibility}>
+            <Typography variant="h2" style={styles.eligibilityTitle}>
               {content[props.locale].eligibility.title}
             </Typography>
-            <EscapedHtml html={content[props.locale].eligibility.text} />
+            <EscapedHtml style={styles.eligibilityText} className="WhiteLink" html={content[props.locale].eligibility.text} />
           </Section>
           <Section>
             <Typography variant="h2">
               {content[props.locale].apply.title}
             </Typography>
             <EscapedHtml html={content[props.locale].apply.text} />
+            <ApplyTable
+              headers={['City', 'Date and Time', 'Location']}
+              content={content["table"]}
+            />
           </Section>
         </>
       );

@@ -88,7 +88,6 @@ function Layout(props) {
               variant="body1"
               component="div"
             >
-              <LocaleButtonList />
             </Typography>
           </>
         }
@@ -99,9 +98,6 @@ function Layout(props) {
                 <ApplyButton />
               </ListItem>
             </a>
-            <ListItem className={classes.drawerItem}>
-              <LocaleButtonList />
-            </ListItem>
           </NavbarDrawer>
         )}
       />

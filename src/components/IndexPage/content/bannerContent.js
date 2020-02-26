@@ -1,4 +1,4 @@
-import logo from '../../../images/anetas-son-overlay.jpg';
+import logo from '../../../images/kids_with_backpacks.jpg';
 
 const neutralContent = {
   logoUrl: logo,

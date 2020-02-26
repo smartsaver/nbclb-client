@@ -6,7 +6,7 @@ import React from 'react';
  */
 
 function EscapedHtml(props) {
-  return <div dangerouslySetInnerHTML={{ __html: props.html }}></div>;
+  return <div style={props.style} className={props.className} dangerouslySetInnerHTML={{ __html: props.html }}></div>;
 }
 
 export default EscapedHtml;

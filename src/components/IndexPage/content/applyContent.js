@@ -10,8 +10,8 @@ function addContent(title, text, footer, respUrl) {
 }
 
 const respUrl = {
-  en: 'https://mysmartfuture.org/pei',
-  fr: 'https://mysmartfuture.org/pei',
+  en: 'https://mysmartfuture.org/signup/pei',
+  fr: 'https://mysmartfuture.org/signup/pei',
 };
 
 const applyContent = {

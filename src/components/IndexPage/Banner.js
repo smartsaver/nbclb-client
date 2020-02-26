@@ -1,6 +1,6 @@
 import React from 'react';
 import Section from '../Section/SectionWithoutContainer';
-import bannerLogo from '../../images/family.jpg';
+import bannerLogo from '../../images/kids_with_backpacks.jpg';
 import withStyles from '@material-ui/core/styles/withStyles';
 import { Typography } from '@material-ui/core';
 
