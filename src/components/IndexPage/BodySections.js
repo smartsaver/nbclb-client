@@ -38,7 +38,10 @@ const styles = {
     color: 'white',
     textShadow: '1.5px 2px rgba(17,17,17,.7)',
     margin: '0 1rem',
-  }
+  },
+  covid: {
+    textAlign: 'center',
+  },
 };
 
 /**
@@ -71,11 +74,11 @@ function BodySections(props) {
               {content[props.locale].apply.title}
             </Typography>
             <EscapedHtml html={content[props.locale].apply.text} />
-            <ApplyTable
+          </Section>
+          {/* <ApplyTable
               headers={['City', 'Date and Time', 'Location']}
               content={content["table"]}
-            />
-          </Section>
+            /> */}
         </>
       );
     else if (props.locale === 'fr')

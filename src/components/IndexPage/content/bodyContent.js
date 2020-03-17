@@ -66,10 +66,10 @@ For families with more than 3 children, [click here.](https://www.canada.ca/en/e
     marked(`
 A Social Insurance Number for you and your child. The child’s primary caregiver must have applied for the Canada Child Benefit for the child through the Canada Revenue Agency and continue to file income tax returns, allowing eligibility for the Canada Learning Bond to be validated.
 
-You can get help at a free tax preparation clinic near you. 
-
-The Province of Prince Edward Island, the Canada Revenue Agency and Service Canada are teaming up to help Islanders with a modest income file their taxes, get their children a Social Insurance Number and sign them up for the Canada Learning Bond all at the same time and location. 
+Special Update: Due to COVID-19, all Super Clinics have been postponed.
+-
   `)
+  // The Province of Prince Edward Island, the Canada Revenue Agency and Service Canada are teaming up to help Islanders with a modest income file their taxes, get their children a Social Insurance Number and sign them up for the Canada Learning Bond all at the same time and location. 
   ),
 };
 
