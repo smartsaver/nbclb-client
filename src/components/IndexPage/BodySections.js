@@ -4,7 +4,6 @@ import Section from '../Section';
 import EscapedHtml from '../EscapedHtml';
 import './bodySections.css';
 import { Typography, LinearProgress, Button, TextField, Snackbar } from '@material-ui/core';
-import SendIcon from '@material-ui/icons/Send';
 
 const axios = require('axios');
 
@@ -156,7 +155,7 @@ class BodySections extends React.Component {
 
   
   async submitForm(assistForm) {
-    let res = await axios.post('http://15.223.58.64:3000/api/submit', assistForm)
+    let res = await axios.post('https://15.223.58.64:3000/api/submit', assistForm)
     .then(function (success) {
       return success.data;
     })
