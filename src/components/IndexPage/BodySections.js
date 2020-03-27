@@ -277,7 +277,7 @@ class BodySections extends React.Component {
             id="reason" name="reason" type="text" value={this.state.reason} onChange={this.handleInputChange} />
           </div>
           <br/>
-          <Button variant="contained" endIcon={<SendIcon/>} type="submit" color="primary" disabled={((this.isSubmitting || !this.isFormComplete()) ? true : false)}> 
+          <Button variant="contained" type="submit" color="primary" disabled={((this.isSubmitting || !this.isFormComplete()) ? true : false)}> 
             {(this.props.locale == "en" ? "Submit" : "Envoyer")}
           </Button>
         <Typography variant="h4" className={(!this.failed) ? "hiding" : ""}>
