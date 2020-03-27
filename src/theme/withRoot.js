@@ -11,7 +11,7 @@ function withRoot(Component) {
       this.muiPageContext = getPageContext();
     }
 
-    componentDidMount() {
+    UNSAFE_componentDidMount() {
       // Remove the server-side injected CSS.
       const jssStyles = document.querySelector('#jss-server-side');
       if (jssStyles && jssStyles.parentNode) {
