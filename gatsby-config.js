@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `NBCLB.ca`,
+    title: `Assist My Smart Future`,
     description: `Find out if your child is eligible to receive the Canada Learning Bond, a grant of $500 to $2,000 from the Government of Canada that is deposited directly into the Registered Education Savings Plan (RESP) of an eligible child to help with the costs of education after high school.`,
     author: `SmartSAVER.org <info@smartsaver.org>`,
   },
@@ -25,7 +25,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: `UA-141953774-1`,
+        trackingId: `UA-161766437-1`,
       },
     },
   ],

@@ -11,7 +11,7 @@ const styles = () => ({
     flexDirection: 'column',
     textAlign: 'center',
     minHeight: '15rem',
-    backgroundColor: grey[200],
+    backgroundColor: '#FFF',
   },
   section: {
     flex: 1,
@@ -37,7 +37,7 @@ function Footer(props) {
     <footer className={classes.root}>
       <Section className={classes.section}>
         <Typography variant="body1">
-          Copyright &copy; 2019. SmartSAVER.org
+          Copyright &copy; {new Date().getFullYear()}. SmartSAVER.org
         </Typography>
         <Typography classes={{ root: classes.links }} variant="body1">
           <Link

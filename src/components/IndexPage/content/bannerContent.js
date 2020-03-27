@@ -1,4 +1,4 @@
-import logo from '../../../images/anetas-son-overlay.jpg';
+import logo from '../../../images/smiling_child.jpg';
 
 const neutralContent = {
   logoUrl: logo,
@@ -6,9 +6,9 @@ const neutralContent = {
 
 /**
  *
- * @param {*} title
- * @param {*} text
- * @returns {title, text}
+ * @param {*} title String
+ * @param {*} text String
+ * @returns {title, text} 
  */
 
 function banner(title, text = '') {
@@ -21,10 +21,12 @@ function banner(title, text = '') {
 
 const bannerContent = {
   en: banner(
-    'Saving for your children’s education is easy with the Canada Learning Bond (CLB)! The CLB offers families with low to modest incomes a simple way to start saving now for their children’s future education.'
+    'If you haven\'t checked in with a bank at this point, your child won\'t receive any money for their future.',
+    'Even in these trying times, SmartSAVER is here to help.  Please fill out the form below, and we\'ll follow up with the Financial Institution.'
   ),
   fr: banner(
-    'Saviez-vous que les jeunes ont 50% plus de chances de continuer leurs études après le secondaire lorsqu’ils ont de l’argent de côté pour le faire ? L’épargne pour les études de vos enfants est facile avec le Bon d’études Canadien (BEC)'
+    'Saviez-vous que les jeunes ont 50% plus de chances de continuer leurs études après le secondaire lorsqu’ils ont de l’argent de côté pour le faire ? L’épargne pour les études de vos enfants est facile avec le Bon d’études Canadien (BEC)',
+    ''
   ),
 };
 

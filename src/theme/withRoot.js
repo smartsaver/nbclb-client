@@ -25,7 +25,6 @@ function withRoot(Component) {
           {/* Make the theme available down the React tree. */}
           <MuiThemeProvider
             theme={this.muiPageContext.theme}
-            sheetsManager={this.muiPageContext.sheetsManager}
           >
             {/* Kickstart a simple baseline to build upon. */}
             <CssBaseline />

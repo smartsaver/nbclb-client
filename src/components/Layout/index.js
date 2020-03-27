@@ -1,5 +1,6 @@
 import React from 'react';
-import navbarLogo from '../../images/esic-logo.png';
+import navbarLogoEn from '../../images/MySmartFUTURE.jpg';
+import navbarLogoFr from '../../images/MonEducAvenir.jpg';
 import Navbar from '../Navbar';
 import NavbarDrawer from '../Navbar/NavbarDrawer';
 import withStyles from '@material-ui/core/styles/withStyles';
@@ -42,9 +43,10 @@ const styles = {
 
 function Layout(props) {
   const { classes } = props;
+  let navbarLogo = navbarLogoEn;
   const ApplyButton = () => (
     <Button variant="contained" color="primary">
-      Apply
+      {(props.locale == "en") ? "Submit" : "Envoyer"}
     </Button>
   );
   const LocaleButtonList = () => (
@@ -66,11 +68,11 @@ function Layout(props) {
     <>
       <Navbar
         brand={
-          <img className={classes.navbarLogo} src={navbarLogo} alt="ESIC" />
+          <img className={classes.navbarLogo} src={(props.locale == "en") ? navbarLogoEn : navbarLogoFr} alt="ESIC" />
         }
         menuEnd={
           <>
-            <a href="./#apply" className={classes.linkButton}>
+            <a href={(props.locale == "en") ? "./#submit" : "./#envoyer"} className={classes.linkButton}>
               <ApplyButton />
             </a>
             <Typography
@@ -84,7 +86,7 @@ function Layout(props) {
         }
         renderDrawer={({ isOpen, closeDrawer }) => (
           <NavbarDrawer isOpen={isOpen} onClose={closeDrawer}>
-            <a href="./#apply" className={classes.linkButton}>
+            <a href={(props.locale == "en") ? "./#submit" : "./#envoyer"} className={classes.linkButton}>
               <ListItem className={classes.drawerItem}>
                 <ApplyButton />
               </ListItem>

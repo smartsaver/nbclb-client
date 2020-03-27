@@ -1,6 +1,6 @@
 import React from 'react';
 import Section from '../Section/SectionWithoutContainer';
-import bannerLogo from '../../images/family.jpg';
+import bannerLogo from '../../images/smiling_child.jpg';
 import withStyles from '@material-ui/core/styles/withStyles';
 import { Typography } from '@material-ui/core';
 
@@ -20,9 +20,9 @@ const styles = theme => ({
     background: `url(${bannerLogo}) no-repeat`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-    minHeight: '38rem',
+    minHeight: '28rem',
     [theme.breakpoints.up('lg')]: {
-      backgroundPositionY: '-9.5rem',
+      backgroundPositionY: '-3.5rem',
     },
   },
   title: {
@@ -38,6 +38,9 @@ const styles = theme => ({
       textAlign: 'center',
     },
   },
+  text: {
+    color: 'white'
+  }
 });
 
 function Banner(props) {
@@ -45,9 +48,12 @@ function Banner(props) {
   return (
     <Section className={classes.root}>
       <div className={classes.container + ' ' + classes.bannerLogo}>
-        <Typography className={classes.title} variant="h2">
+        {/* <Typography className={classes.title} variant="h2">
           {content.title}
         </Typography>
+        <Typography variant="h4">
+          {content.text}
+        </Typography> */}
       </div>
     </Section>
   );
