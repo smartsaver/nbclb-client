@@ -3,7 +3,7 @@ import withStyles from '@material-ui/core/styles/withStyles';
 import Section from '../Section';
 import EscapedHtml from '../EscapedHtml';
 import './bodySections.css';
-import { Typography, LinearProgress, Button, TextField, Snackbar } from '@material-ui/core';
+import { Typography, LinearProgress, Button, TextField, Select, MenuItem, FormControl, FormHelperText } from '@material-ui/core';
 
 const axios = require('axios');
 
@@ -63,11 +63,6 @@ const SectionForEn = (props) => {
 };
 
 class BodySections extends React.Component {
-
-  Alert(props) {
-    return <MuiAlert elevation={6} variant="filled" {...props} />;
-  }
-  
   /**
  * @description - Body Sections Component renders a list of sections if it exist.
  * There are multiple sections in en, so an if statement is controlling the components.
@@ -84,6 +79,7 @@ class BodySections extends React.Component {
       phone_number: "",
       financial_institution: "",
       reason: "",
+      reasonSelect: 0,
       progress: 0,
       finished: false
     };
@@ -98,6 +94,19 @@ class BodySections extends React.Component {
       financial_institution: 50,
       reason: 255
     };
+
+    this.reasons = {
+      en: {
+        0: "I never received a phone call", 
+        1: "I missed my appointment", 
+        2: "Other", 
+      },
+      fr: {
+        0: "Je n'ai jamais reçu d'appels téléphoniques",
+        1: "J'ai raté mon rendez-vous",
+        2: "Autre Raison",
+      }
+    }
     
     // Tried to get the progress bar to react in real time with this variable.  Still in progress, but useless atm.
     this.progress = 0;
@@ -118,6 +127,20 @@ class BodySections extends React.Component {
       [name]: value
     });
 
+    if (this.state.reasonSelect != 2) {
+      this.setState({
+        reason: this.reasons[this.props.locale][this.state.reasonSelect]
+      })
+    }
+
+    if (name == "reasonSelect") {
+      if (value == 2) {
+        this.setState({
+          reason: this.reasons[this.props.locale][2]
+        })
+      }
+    }
+    
     this.validateForm();
     this.setState({progress: this.progress})
   }
@@ -127,6 +150,12 @@ class BodySections extends React.Component {
     event.preventDefault();
     this.isSubmitting = true;  
     this.failed = false;
+
+    // Send english reasons to the database, if it's option 1 or 2.
+    // French optional options are in french so...
+    if (this.state.reasonSelect != 2) {
+      this.state.reason = this.reasons["en"][this.state.reasonSelect];
+    }
 
     // Send the form to the backend  
     this.submitForm(this.state)
@@ -198,10 +227,14 @@ class BodySections extends React.Component {
       this.progress++;
     if (!this.validateReason())
       this.progress++;
+    
   }
 
   isFormComplete() {
-    return this.state.progress == 6;
+    if (this.state.reasonSelect == 2)
+      return this.state.progress == 6;
+    else
+      return this.state.progress >= 5; // If it's greater than 5, all the more power to ya bub!
   }
 
   render() {
@@ -229,65 +262,83 @@ class BodySections extends React.Component {
           <div className="sharedDiv">
             <TextField variant="filled" fullWidth required placeholder="John"
             error={this.validateFirstName()}
-            // helperText={(this.validateFirstName()) ? "2-30" : ""}
             label={(this.props.locale == "en") ? "First Name:" : "Prénom:"}
             minLength="2" maxLength="30"
             id="first_name" name="first_name" type="text" value={this.state.first_name} onChange={this.handleInputChange} />
 
             <TextField variant="filled" fullWidth required placeholder="Doe"
             error={this.validateLastName()}
-            // helperText={(this.validateLastName()) ? "2-30" : ""}
             label={(this.props.locale == "en") ? "Last Name:" : "Nom:"}
             minLength="2" maxLength="30"
             id="last_name" name="last_name" type="text" value={this.state.last_name} onChange={this.handleInputChange} />
           </div>
+
           <br/>
+
           <div className="sharedDiv">
             <TextField variant="filled" fullWidth required placeholder="jdoe@gmail.com"
             error={this.validateEmail()}
-            // helperText={(this.validateEmail()) ? "2-50" : ""}
             label={(this.props.locale == "en") ? "E-Mail:" : "Courriel:"}
             minLength="2" maxLength="50"
             id="email" name="email" type="email" value={this.state.email} onChange={this.handleInputChange} />
 
             <TextField variant="filled" fullWidth required placeholder="9998887777"
             error={this.validatePhoneNumber()}
-            // helperText={(this.validatePhoneNumber()) ? "2-20" : ""}
             label={(this.props.locale == "en") ? "Phone Number:" : "Prénom:"}
             minLength="2" maxLength="20"
             id="phone_number" name="phone_number" type="text" value={this.state.phone_number} onChange={this.handleInputChange} />
           </div>
+
           <br/>
+
           <div className="sharedDiv">
             <TextField variant="filled" fullWidth required placeholder="TD"
             error={this.validateFinancialInstitution()}
-            // helperText={(this.validateFinancialInstitution()) ? "2-50" : ""}
             label={(this.props.locale == "en") ? "Financial Institution:" : "FI:"} 
             minLength="2" maxLength="50"
             id="financial_institution" name="financial_institution" type="text" value={this.state.financial_institution} onChange={this.handleInputChange} />
           </div>
+
           <br/>
-          <div className="sharedDiv">
-            <TextField variant="filled" fullWidth required placeholder="Quarantined"
+
+          <FormControl className="sharedDiv">
+            <Select
+              id="reasonSelect"
+              name="reasonSelect"
+              value={this.state.reasonSelect}
+              onChange={this.handleInputChange}>
+                <MenuItem value={0}>{(this.reasons[this.props.locale][0])}</MenuItem>
+                <MenuItem value={1}>{(this.reasons[this.props.locale][1])}</MenuItem>
+                <MenuItem value={2}>{(this.reasons[this.props.locale][2])}</MenuItem>
+            </Select>
+            <FormHelperText>{(this.props.locale == "en") ? "What happened?" : "Qu'est-il arrivé?"}</FormHelperText>
+
+            <TextField variant="filled" fullWidth placeholder="Quarantined" className={(this.state.reasonSelect != 2) ? "hiding" : ""}
             error={this.validateReason()}
-            // helperText={(this.validateReason()) ? "2-255" : ""}
-            label={(this.props.locale == "en") ? "Why haven't you been in contact with the bank?:" : "Je souhaite que mon institution financière me téléphone."} 
+            label={(this.reasons[this.props.locale][2])} 
             minLength="2" maxLength="255"
             id="reason" name="reason" type="text" value={this.state.reason} onChange={this.handleInputChange} />
-          </div>
+          </FormControl>
+
           <br/>
+
           <Button variant="contained" type="submit" color="primary" disabled={((this.isSubmitting || !this.isFormComplete()) ? true : false)}> 
             {(this.props.locale == "en" ? "Submit" : "Envoyer")}
           </Button>
-        <Typography variant="h4" className={(!this.failed) ? "hiding" : ""}>
-          Your application was not submitted successfully!  Please check your network, then e-mail us at <a href="mailto:info@smartsaver.org">info@smartsaver.org</a> for further assistance.
-        </Typography>
-          </form>
+
+          <Typography variant="h4" className={(!this.failed) ? "hiding" : ""}>
+          {(this.props.locale == "en") ? 
+              EscapedHtml("Your application was not submitted successfully!  Please check your network, then e-mail us at <a href='mailto:info@smartsaver.org'>info@smartsaver.org</a> for further assistance.") : 
+              EscapedHtml("Votre candidature n'a pas été soumise avec succès! Veuillez vérifier votre réseau, puis envoyez-nous un courriel à <a href='mailto:info@smartsaver.org'>info@smartsaver.org</a> pour plus d'aide.")}
+          </Typography>
+        </form>
       </Section>
       <Section className={"hiding"}></Section>
       <Section name={this.props.locale == "en" ? "submit" : "envoyer"} className={(!this.state.finished) ? "hiding" : ""}>
         <Typography variant="h2">
-            Your application was submitted successfully!  Please wait for a callback in the coming weeks.
+            {(this.props.locale == "en") ? 
+            "Your application was submitted successfully!  Please wait for a callback in the coming weeks." : 
+            "Votre candidature a été envoyée avec succès! Veuillez attendre un rappel dans les prochaines semaines."}
         </Typography>
       </Section>
       </>
