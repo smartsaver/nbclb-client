@@ -26,42 +26,6 @@ const styles = {
   }
 }
 
-const SectionForEn = (props) => {
-  console.log("Section for Props:", props);
-  if (props.locale === 'en')
-    return (
-      <>
-        <Section>
-          <Typography variant="h2">
-            {props.content[props.locale].funding.title}
-          </Typography>
-          <EscapedHtml html={props.content[props.locale].funding.text} />
-        </Section>
-        <Section>
-          <Typography variant="h2">
-            {props.content[props.locale].eligibility.title}
-          </Typography>
-          <EscapedHtml html={props.content[props.locale].eligibility.text} />
-        </Section>
-        <Section>
-          <Typography variant="h2">
-            {props.content[props.locale].apply.title}
-          </Typography>
-          <EscapedHtml html={props.content[props.locale].apply.text} />
-        </Section>
-      </>
-    );
-  else if (props.locale === 'fr')
-    return (
-      <Section>
-        <Typography variant="h2">
-          {content[props.locale].apply.title}
-        </Typography>
-        <EscapedHtml html={content[props.locale].apply.text} />
-      </Section>
-    );
-};
-
 class BodySections extends React.Component {
   /**
  * @description - Body Sections Component renders a list of sections if it exist.
@@ -364,7 +328,7 @@ class BodySections extends React.Component {
             {(this.props.locale == "en" ? "Submit" : "Envoyer")}
           </Button>
 
-          <div className={(!this.failed) ? "hiding" : ""}>
+          <div className={(!this.failed) ? "hiding" : "centered"}>
             <Typography variant="h4">
             {(this.props.locale == "en") ? 
                 EscapedHtml("Your application was not submitted successfully!  Please check your network, then e-mail us at <a href='mailto:info@smartsaver.org'>info@smartsaver.org</a> for further assistance.") : 
@@ -374,7 +338,7 @@ class BodySections extends React.Component {
         </form>
       </Section>
       <Section className={"hiding"}></Section>
-      <Section name={this.props.locale == "en" ? "submit" : "envoyer"} className={(!this.state.finished) ? "hiding" : ""}>
+      <Section name={this.props.locale == "en" ? "submit" : "envoyer"} className={(!this.state.finished) ? "hiding" : "centered"}>
         <Typography variant="h2">{(this.props.locale == "en") ? "Thank you!" : "Merci!" }</Typography>
         <Typography variant="h3">
             {(this.props.locale == "en") ? 
