@@ -173,7 +173,7 @@ class BodySections extends React.Component {
 
   
   async submitForm(assistForm) {
-    let res = await axios.post('https://15.223.58.64:3000/api/submit', assistForm)
+    let res = await axios.post('https://reeeussite.com:3000/api/submit', assistForm)
     .then(function (success) {
       return success.data;
     })
