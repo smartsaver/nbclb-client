@@ -63,12 +63,12 @@ class BodySections extends React.Component {
       en: {
         0: "I never received a phone call", 
         1: "I missed my appointment", 
-        2: "I want a call back from my bank", 
+        2: "Other", 
       },
       fr: {
         0: "Je n'ai jamais reçu d'appels téléphoniques",
         1: "J'ai raté mon rendez-vous",
-        2: "Je souhaite que mon institution financière me téléphone",
+        2: "Autre raison",
       }
     }
 
@@ -116,22 +116,22 @@ class BodySections extends React.Component {
       [name]: value
     });
 
-    // if (this.state.reasonSelect != 2) {
-    //   this.setState({
-    //     reason: this.reasons[this.props.locale][this.state.reasonSelect]
-    //   })
-    // }
+    if (this.state.reasonSelect != 2) {
+      this.setState({
+        reason: this.reasons[this.props.locale][this.state.reasonSelect]
+      })
+    }
 
-    // if (name == "reasonSelect") {
-    //   if (value == 2) {
-    //     this.setState({
-    //       reason: this.reasons[this.props.locale][2]
-    //     })
-    //   }
-    // }
+    if (name == "reasonSelect") {
+      if (value == 2) {
+        this.setState({
+          reason: ""
+        })
+      }
+    }
     
-    this.validateForm();
-    this.setState({progress: this.progress})
+    ;
+    this.setState({progress: this.validateForm()})
   }
 
   handleSubmit(event) {
@@ -142,9 +142,9 @@ class BodySections extends React.Component {
 
     // Send english reasons to the database, if it's option 1 or 2.
     // French optional options are in french so...
-    // if (this.state.reasonSelect != 2) {
-    //   this.state.reason = this.reasons["en"][this.state.reasonSelect];
-    // }
+    if (this.state.reasonSelect != 2) {
+      this.state.reason = this.reasons["en"][this.state.reasonSelect];
+    }
 
     // Send the form to the backend  
     this.submitForm(this.state)
@@ -305,21 +305,21 @@ class BodySections extends React.Component {
 
           <FormControl className="sharedDiv">
             <Select
-              id="reason"
-              name="reason"
-              value={this.state.reason}
+              id="reasonSelect"
+              name="reasonSelect"
+              value={this.state.reasonSelect}
               onChange={this.handleInputChange}>
-                <MenuItem value={this.reasons['en'][0]}>{(this.reasons[this.props.locale][0])}</MenuItem>
-                <MenuItem value={this.reasons['en'][1]}>{(this.reasons[this.props.locale][1])}</MenuItem>
-                <MenuItem value={this.reasons['en'][2]}>{(this.reasons[this.props.locale][2])}</MenuItem>
+                <MenuItem value={0}>{(this.reasons[this.props.locale][0])}</MenuItem>
+                <MenuItem value={1}>{(this.reasons[this.props.locale][1])}</MenuItem>
+                <MenuItem value={2}>{(this.reasons[this.props.locale][2])}</MenuItem>
             </Select>
-            <FormHelperText>{(this.props.locale == "en") ? "What happened?" : "Qu'est-il arrivé?"}</FormHelperText>
+            <FormHelperText>{(this.props.locale == "en") ? "I want a call back from my bank" : "Je souhaite que mon institution financière me téléphone?"}</FormHelperText>
 
-            {/* <TextField variant="filled" fullWidth placeholder="Quarantined" className={(this.state.reasonSelect != 2) ? "hiding" : ""}
+            <TextField variant="filled" fullWidth placeholder="Quarantined" className={(this.state.reasonSelect != 2) ? "hiding" : ""}
             error={this.validateReason()}
             label={(this.reasons[this.props.locale][2])} 
             minLength="2" maxLength="255"
-            id="reason" name="reason" type="text" value={this.state.reason} onChange={this.handleInputChange} /> */}
+            id="reason" name="reason" type="text" value={this.state.reason} onChange={this.handleInputChange} />
           </FormControl>
 
           <br/>
@@ -340,11 +340,6 @@ class BodySections extends React.Component {
       <Section className={"hiding"}></Section>
       <Section name={this.props.locale == "en" ? "submit" : "envoyer"} className={(!this.state.finished) ? "hiding" : "centered"}>
         <Typography variant="h2">{(this.props.locale == "en") ? "Thank you!" : "Merci!" }</Typography>
-        <Typography variant="h3">
-            {(this.props.locale == "en") ? 
-            "Your application was submitted successfully!  Please wait for a callback in the coming weeks." : 
-            "Votre candidature a été envoyée avec succès! Veuillez attendre un rappel dans les prochaines semaines."}
-        </Typography>
       </Section>
       </>
     );
