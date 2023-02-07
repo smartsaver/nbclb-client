@@ -10,8 +10,8 @@ function addContent(title, text, footer, respUrl) {
 }
 
 const respUrl = {
-  en: 'https://mysmartfuture.org/signup/clbnb',
-  fr: 'https://moneducavenir.org/signup/clbnb',
+  en: 'https://mysmartfuture.org',
+  fr: 'https://moneducavenir.org',
 };
 
 const applyContent = {
@@ -21,7 +21,7 @@ const applyContent = {
 If you cannot see the form, [click here.](${respUrl.en})
   `),
     marked(`
-For more information contact us at 1-855-737-7252 (1-855-RESP-CLB) or info@smartsaver.org.
+For more information contact us at 1-855-737-7252 (1-855-RESP-CLB)
 
 Or contact 1 800 O-Canada:
 
@@ -41,7 +41,7 @@ Si votre enfant est né en 2004 ou après et que votre revenu familial net est d
 *pour les familles de trois enfants ou moins. Si votre famille compte plus de trois enfants, [cliquez ici](https://www.canada.ca/fr/emploi-developpement-social/services/bon-etudes/admissibilite.html).`) +
       marked(`Le lien ne s’ouvre pas, [cliquez ici](${respUrl.fr}).`),
     marked(`
-Pour en savoir plus, composez le 1-855-737-7252 ou contactez info@smartsaver.org.
+Pour en savoir plus, composez le 1-855-737-7252
 
 Ou communiquez avec 1 800 O-Canada:
 
